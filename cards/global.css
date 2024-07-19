@@ -1,0 +1,19 @@
+#details {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    max-width: 1000px;
+  }
+  
+  html {
+    background-color: ghostwhite;
+    font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
+      "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+  }
+  .text-center {
+    text-align: center;
+  }
+  

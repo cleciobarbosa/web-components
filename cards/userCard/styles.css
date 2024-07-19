@@ -1,0 +1,29 @@
+.user-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+    border-radius: 5px; /* 5px rounded corners */
+    width: 200px;
+    margin: 10px 20px;
+    background-color: white;
+  }
+  .user-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  .user-card img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+  }
+  .container {
+    padding: 10px 16px;
+  }
+  .user-card button {
+    width: 100%;
+    display: inline-block;
+  }
+  h3 {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  

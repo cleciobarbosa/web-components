@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Web Components</title>
+    <script src="userCard/index.js" defer></script>
+    <script src="modal/index.js" defer></script>
+    <link rel="stylesheet" href="global.css" />
+  </head>
+  <script>
+    let page = 1;
+    let max = 0;
+    const loadData = async () => {
+      await fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
+        .then((_) => _.json())
+        .then((_) => {
+          _.results.forEach((user, index) => {
+            max = _.info.pages;
+            const nodeToBeInserted = document.createElement("user-card");
+            nodeToBeInserted.setAttribute("name", user.name);
+            nodeToBeInserted.setAttribute("avatar", user.image);
+            nodeToBeInserted.setAttribute("status", user.status);
+            nodeToBeInserted.setAttribute("species", user.species);
+            nodeToBeInserted.setAttribute("gender", user.gender);
+            nodeToBeInserted.setAttribute("key", user.id);
+            document
+              .getElementById("details")
+              .insertAdjacentElement("beforeend", nodeToBeInserted);
+          });
+        });
+      page++;
+    };
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        const {
+          scrollTop,
+          scrollHeight,
+          clientHeight
+        } = document.documentElement;
+        if (scrollTop + clientHeight >= scrollHeight - 5 && max >= page) {
+          loadData();
+        }
+      },
+      {
+        passive: true
+      }
+    );
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+      loadData();
+    });
+  </script>
+  <body>
+    <h1 class="text-center">Web Components Demo</h1>
+    <div id="details"></div>
+  </body>
+</html>
