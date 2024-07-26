@@ -2,27 +2,48 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello World</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <script src="/js/starRater.js" defer></script>
     <script src="/js/sample.js" defer></script>
     <script src="/js/v-card.js" defer></script>
-    
+    <script src="/js/input.js" defer></script>
+
+    <title>Web Components</title>
 
 </head>
 
 <body>
-    <v-card heading="Clécio Barbosa" subheading="Developer"></v-card>
-    <hr />
-    <ul>
-        <li><a href="/cards/cards.html">Cards</a></li>
-    </ul>
-    <hr />
-    <sample-component>Juca</sample-component>
-    <hr />
-    <star-rater data-rating="1"></star-rater>
-    <hr />
+    <div class="container-fluid">
+        <v-card heading="Clécio Barbosa" subheading="Developer"></v-card>
+        <hr />
+        <ul>
+            <li><a class="link" href="/cards/cards.html">Cards</a></li>
+        </ul>
+        <hr />
+        <input-component is-required>
+            <span>Nome:</span>
+        </input-component>
+        <input-component is-required>
+            <span slot="Label">Nome:</span>
+        </input-component>
+        <hr />
+        <sample-component>Juca</sample-component>
+        <hr />
+        <star-rater data-rating="1"></star-rater>
+        <hr />
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    </div>
 </body>
 
 </html>
